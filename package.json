@@ -1,0 +1,41 @@
+{
+  "name": "khanakhazana",
+  "version": "1.0.0",
+  "description": "KhanaKhazana - Indian Vegetarian Restaurant Website",
+  "main": "restaurant.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Deploying to GitHub Pages with custom domain khanakhazana.tech'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishagrawal30/khanakhazana.git"
+  },
+  "keywords": [
+    "restaurant",
+    "indian-food",
+    "vegetarian",
+    "food-ordering",
+    "tech-domain",
+    "github-pages"
+  ],
+  "author": {
+    "name": "Krish Agrawal & Prateek Kumar Ranjan",
+    "email": "agrawalkrishn30@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krishagrawal30/khanakhazana/issues"
+  },
+  "homepage": "https://khanakhazana.tech",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

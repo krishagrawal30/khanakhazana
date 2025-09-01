@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhanaKhazana - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=restaurant.html">
+    <link rel="canonical" href="restaurant.html">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #a0522d;
+        }
+        .redirect-message {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(160,82,45,0.07);
+            max-width: 500px;
+        }
+        .logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .spinner {
+            border: 3px solid #ffe4b5;
+            border-top: 3px solid #a0522d;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fallback-link {
+            margin-top: 1rem;
+        }
+        .fallback-link a {
+            color: #a0522d;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #a0522d;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .fallback-link a:hover {
+            background: #a0522d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-message">
+        <div class="logo">👨‍🍳 KHANA KHAZANA</div>
+        <h2>Welcome to KhanaKhazana!</h2>
+        <p>Redirecting you to our delicious menu...</p>
+        <div class="spinner"></div>
+        <div class="fallback-link">
+            <p>If you're not redirected automatically, <a href="restaurant.html">click here</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Fallback redirect in case meta refresh doesn't work
+        setTimeout(function() {
+            window.location.href = 'restaurant.html';
+        }, 1000);
+    </script>
+</body>
+</html>
