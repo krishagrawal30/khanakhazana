@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Order on KhanaKhazana</title>
+    <style>
+        #cart {
+            background: #fffbe6;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(160,82,45,0.07);
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        #cart h3 {
+            color: #a0522d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        #cart-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        #cart-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ffe4b5;
+            font-size: 1.05rem;
+        }
+        #cart-total {
+            font-weight: bold;
+            color: #a0522d;
+            text-align: right;
+            font-size: 1.1rem;
+        }
+        .remove-btn, .qty-btn, .add-btn {
+            background: #a0522d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 0.3rem;
+            transition: background 0.3s, color 0.3s;
+        }
+        .remove-btn:hover, .qty-btn:hover, .add-btn:hover {
+            background: #ffe4b5;
+            color: #a0522d;
+        }
+        .ordernow-btn {
+            background: #a0522d;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 2rem auto 0 auto;
+            display: block;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(160,82,45,0.12);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .ordernow-btn:hover {
+            background: #ffe4b5;
+            color: #a0522d;
+            box-shadow: 0 4px 16px rgba(160,82,45,0.18);
+        }
+        #form {
+            font-size: 1rem;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fffbe6;
+            border-radius: 10px;
+            padding: 2rem 2rem 1.5rem 2rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            box-shadow: 0 2px 12px rgba(160,82,45,0.07);
+        }
+        #form h2 {
+            margin-bottom: 0.5rem;
+            color: #a0522d;
+            font-size: 1.3rem;
+        }
+        #form h4 {
+            margin-bottom: 1.5rem;
+            color: #a0522d;
+            font-size: 1rem;
+        }
+        #form table {
+            width: 100%;
+            border-spacing: 0.7rem;
+        }
+        #form td {
+            padding: 0.5rem 0.3rem;
+        }
+        #form label {
+            font-weight: 500;
+            color: #a0522d;
+        }
+        #form input[type="text"], #form input[type="number"], #form input[type="email"], #form textarea {
+            width: 95%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #a0522d;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+        #form input[type="radio"] {
+            margin-right: 0.3rem;
+        }
+        #form .center {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/ordern.jpg" alt="Order Banner" class="center" style="max-width:300px;margin-top:2rem;">
+    <hr>
+    <table align="center" id="order_table" border="0">
+        <tr>
+            <th>Item</th>
+            <th>Item name</th>
+            <th>Price</th>
+            <th>Add</th>
+        </tr>
+    <tr><td><img src="images/paneer.jpg" alt="Shahi Paneer"></td><td>Shahi Paneer</td><td>229/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Shahi Paneer',229)"></td></tr>
+    <tr><td><img src="images/dosa.jpg" alt="Masala Dosa"></td><td>Masala Dosa with Sambhar & Chutni</td><td>99/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Masala Dosa',99)"></td></tr>
+    <tr><td><img src="images/biryani.jpg" alt="Shahi Biryani"></td><td>Shahi Biryani</td><td>129/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Shahi Biryani',129)"></td></tr>
+    <tr><td><img src="images/fries.jpg" alt="French Fries"></td><td>French Fries</td><td>69/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('French Fries',69)"></td></tr>
+    <tr><td><img src="images/naan.jpg" alt="Tandoori Naan"></td><td>Tandoori Naan (2 pc)</td><td>40/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Tandoori Naan',40)"></td></tr>
+    <tr><td><img src="images/pasta.jpg" alt="White sauce Pasta"></td><td>White sauce Pasta</td><td>159/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('White sauce Pasta',159)"></td></tr>
+    <tr><td><img src="images/noodles.jpg" alt="Hakka Noodles"></td><td>Hakka Noodles</td><td>149/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Hakka Noodles',149)"></td></tr>
+    <tr><td><img src="images/manchurian.jpg" alt="Veg Manchurian"></td><td>Veg Manchurian</td><td>139/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Veg Manchurian',139)"></td></tr>
+    <tr><td><img src="images/shake.jpg" alt="Oreo Shake"></td><td>Oreo Shake (300 ml)</td><td>109/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Oreo Shake',109)"></td></tr>
+    <tr><td><img src="images/Pizza.jpg" alt="Double cheese Margherita Pizza"></td><td>Double cheese Margherita Pizza</td><td>385/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Pizza',385)"></td></tr>
+    <tr><td><img src="images/burger.jpg" alt="Burger"></td><td>Burger</td><td>145/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Burger',145)"></td></tr>
+    <tr><td><img src="images/momos.jpg" alt="Steamed Momos"></td><td>Steamed Momos</td><td>89/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Momos',89)"></td></tr>
+    <tr><td><img src="images/pav bhaji.jpg" alt="Pav Bhaji"></td><td>Pav Bhaji</td><td>125/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Pav Bhaji',125)"></td></tr>
+    <tr><td><img src="images/lassi.jpg" alt="Lassi"></td><td>Lassi (250 ml)</td><td>70/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Lassi',70)"></td></tr>
+    <tr><td><img src="images/sandwich.jpg" alt="Veg Cheesy Grill sandwich"></td><td>Veg Cheesy Grill sandwich</td><td>135/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Sandwich',135)"></td></tr>
+    </table>
+    <div id="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-list"></ul>
+        <div id="cart-total">Total: 0/-</div>
+        <button type="button" class="remove-btn" onclick="clearCart()">Clear Cart</button>
+    </div>
+    <button class="ordernow-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Proceed to Delivery Details</button>
+    <div id="form">
+        <h2><u>Customer's Delivery details</u></h2>
+        <h4>All fields are mandatory*</h4>
+        <form action="order.html" method="get">
+            <table align="center" onsubmit="return show();">
+                <tr>
+                    <td><label for="fname">First Name:</label></td>
+                    <td><input type="text" id="fname" name="fname" required></td>
+                    <td><label for="lname">Last Name:</label></td>
+                    <td><input type="text" id="lname" name="lname" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td colspan="3">
+                        <input type="radio" id="gender_male" name="gender">Male
+                        <input type="radio" id="gender_female" name="gender" required>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="moblie">Mobile number:</label></td>
+                    <td><input type="number" id="moblie" name="Mobile" required></td>
+                    <td><label for="add">Address:</label></td>
+                    <td><textarea name="add" id="add" cols="20" rows="2" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="pin">Pincode:</label></td>
+                    <td><input type="number" id="pin" name="pin" required></td>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+            </table>
+        </form>
+        <div class="center">
+            <input type="submit" value="Submit" onclick="show()">
+        </div>
+        <p id="cal" class="center"></p>
+    </div>
+    <footer>
+        <hr>
+        <div class="social-icons">
+            <a href="http://www.instagram.com/krishagrawal_30/"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="http://wa.me/918956369613"><img src="images/whats.png" alt="WhatsApp"></a>
+            <a href="http://twitter.com/KrishAg2006"><img src="images/twit.png" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2025 KhanaKhazana. All rights reserved.</p>
+    </footer>
+    <script>
+        let cart = [];
+        function addToCart(name, price) {
+            const idx = cart.findIndex(item => item.name === name);
+            if (idx > -1) {
+                cart[idx].qty += 1;
+            } else {
+                cart.push({name, price, qty: 1});
+            }
+            renderCart();
+        }
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            renderCart();
+        }
+        function changeQty(name, delta) {
+            const idx = cart.findIndex(item => item.name === name);
+            if (idx > -1) {
+                cart[idx].qty += delta;
+                if (cart[idx].qty < 1) cart[idx].qty = 1;
+            }
+            renderCart();
+        }
+        function clearCart() {
+            cart = [];
+            renderCart();
+        }
+        function renderCart() {
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.qty;
+                const li = document.createElement('li');
+                li.innerHTML = `${item.name} <button class='qty-btn' onclick="changeQty('${item.name}',-1)">-</button> x ${item.qty} <button class='qty-btn' onclick="changeQty('${item.name}',1)">+</button> <span>${item.price * item.qty}/-</span> <button class='remove-btn' onclick="removeFromCart('${item.name}')">Remove</button>`;
+                cartList.appendChild(li);
+            });
+            document.getElementById('cart-total').textContent = `Total: ${total}/-`;
+        }
+    </script>
+</body>
+</html>
