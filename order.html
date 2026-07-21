@@ -3,243 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online — KhanaKhazana</title>
+    <meta name="description" content="Order delicious Indian vegetarian food online from KhanaKhazana. Browse our full menu, add to cart, and get fast delivery to your doorstep.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Order on KhanaKhazana</title>
-    <style>
-        #cart {
-            background: #fffbe6;
-            border-radius: 10px;
-            box-shadow: 0 2px 12px rgba(160,82,45,0.07);
-            max-width: 500px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-        #cart h3 {
-            color: #a0522d;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-        }
-        #cart-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1rem 0;
-        }
-        #cart-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #ffe4b5;
-            font-size: 1.05rem;
-        }
-        #cart-total {
-            font-weight: bold;
-            color: #a0522d;
-            text-align: right;
-            font-size: 1.1rem;
-        }
-        .remove-btn, .qty-btn, .add-btn {
-            background: #a0522d;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 0.4rem 1rem;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-left: 0.3rem;
-            transition: background 0.3s, color 0.3s;
-        }
-        .remove-btn:hover, .qty-btn:hover, .add-btn:hover {
-            background: #ffe4b5;
-            color: #a0522d;
-        }
-        .ordernow-btn {
-            background: #a0522d;
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin: 2rem auto 0 auto;
-            display: block;
-            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 8px rgba(160,82,45,0.12);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .ordernow-btn:hover {
-            background: #ffe4b5;
-            color: #a0522d;
-            box-shadow: 0 4px 16px rgba(160,82,45,0.18);
-        }
-        #form {
-            font-size: 1rem;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #fffbe6;
-            border-radius: 10px;
-            padding: 2rem 2rem 1.5rem 2rem;
-            margin: 2rem auto;
-            max-width: 700px;
-            box-shadow: 0 2px 12px rgba(160,82,45,0.07);
-        }
-        #form h2 {
-            margin-bottom: 0.5rem;
-            color: #a0522d;
-            font-size: 1.3rem;
-        }
-        #form h4 {
-            margin-bottom: 1.5rem;
-            color: #a0522d;
-            font-size: 1rem;
-        }
-        #form table {
-            width: 100%;
-            border-spacing: 0.7rem;
-        }
-        #form td {
-            padding: 0.5rem 0.3rem;
-        }
-        #form label {
-            font-weight: 500;
-            color: #a0522d;
-        }
-        #form input[type="text"], #form input[type="number"], #form input[type="email"], #form textarea {
-            width: 95%;
-            padding: 0.5rem;
-            border-radius: 6px;
-            border: 1px solid #a0522d;
-            margin-bottom: 0.2rem;
-            font-size: 1rem;
-        }
-        #form input[type="radio"] {
-            margin-right: 0.3rem;
-        }
-        #form .center {
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 <body>
-    <img src="images/ordern.jpg" alt="Order Banner" class="center" style="max-width:300px;margin-top:2rem;">
-    <hr>
-    <table align="center" id="order_table" border="0">
-        <tr>
-            <th>Item</th>
-            <th>Item name</th>
-            <th>Price</th>
-            <th>Add</th>
-        </tr>
-    <tr><td><img src="images/paneer.jpg" alt="Shahi Paneer"></td><td>Shahi Paneer</td><td>229/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Shahi Paneer',229)"></td></tr>
-    <tr><td><img src="images/dosa.jpg" alt="Masala Dosa"></td><td>Masala Dosa with Sambhar & Chutni</td><td>99/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Masala Dosa',99)"></td></tr>
-    <tr><td><img src="images/biryani.jpg" alt="Shahi Biryani"></td><td>Shahi Biryani</td><td>129/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Shahi Biryani',129)"></td></tr>
-    <tr><td><img src="images/fries.jpg" alt="French Fries"></td><td>French Fries</td><td>69/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('French Fries',69)"></td></tr>
-    <tr><td><img src="images/naan.jpg" alt="Tandoori Naan"></td><td>Tandoori Naan (2 pc)</td><td>40/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Tandoori Naan',40)"></td></tr>
-    <tr><td><img src="images/pasta.jpg" alt="White sauce Pasta"></td><td>White sauce Pasta</td><td>159/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('White sauce Pasta',159)"></td></tr>
-    <tr><td><img src="images/noodles.jpg" alt="Hakka Noodles"></td><td>Hakka Noodles</td><td>149/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Hakka Noodles',149)"></td></tr>
-    <tr><td><img src="images/manchurian.jpg" alt="Veg Manchurian"></td><td>Veg Manchurian</td><td>139/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Veg Manchurian',139)"></td></tr>
-    <tr><td><img src="images/shake.jpg" alt="Oreo Shake"></td><td>Oreo Shake (300 ml)</td><td>109/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Oreo Shake',109)"></td></tr>
-    <tr><td><img src="images/Pizza.jpg" alt="Double cheese Margherita Pizza"></td><td>Double cheese Margherita Pizza</td><td>385/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Pizza',385)"></td></tr>
-    <tr><td><img src="images/burger.jpg" alt="Burger"></td><td>Burger</td><td>145/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Burger',145)"></td></tr>
-    <tr><td><img src="images/momos.jpg" alt="Steamed Momos"></td><td>Steamed Momos</td><td>89/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Momos',89)"></td></tr>
-    <tr><td><img src="images/pav bhaji.jpg" alt="Pav Bhaji"></td><td>Pav Bhaji</td><td>125/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Pav Bhaji',125)"></td></tr>
-    <tr><td><img src="images/lassi.jpg" alt="Lassi"></td><td>Lassi (250 ml)</td><td>70/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Lassi',70)"></td></tr>
-    <tr><td><img src="images/sandwich.jpg" alt="Veg Cheesy Grill sandwich"></td><td>Veg Cheesy Grill sandwich</td><td>135/-</td><td><input type="button" class="add-btn" value="Add" onclick="addToCart('Sandwich',135)"></td></tr>
-    </table>
-    <div id="cart">
-        <h3>Your Cart</h3>
-        <ul id="cart-list"></ul>
-        <div id="cart-total">Total: 0/-</div>
-        <button type="button" class="remove-btn" onclick="clearCart()">Clear Cart</button>
-    </div>
-    <button class="ordernow-btn" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Proceed to Delivery Details</button>
-    <div id="form">
-        <h2><u>Customer's Delivery details</u></h2>
-        <h4>All fields are mandatory*</h4>
-        <form action="order.html" method="get">
-            <table align="center" onsubmit="return show();">
-                <tr>
-                    <td><label for="fname">First Name:</label></td>
-                    <td><input type="text" id="fname" name="fname" required></td>
-                    <td><label for="lname">Last Name:</label></td>
-                    <td><input type="text" id="lname" name="lname" required></td>
-                </tr>
-                <tr>
-                    <td><label>Gender:</label></td>
-                    <td colspan="3">
-                        <input type="radio" id="gender_male" name="gender">Male
-                        <input type="radio" id="gender_female" name="gender" required>Female
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="moblie">Mobile number:</label></td>
-                    <td><input type="number" id="moblie" name="Mobile" required></td>
-                    <td><label for="add">Address:</label></td>
-                    <td><textarea name="add" id="add" cols="20" rows="2" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="pin">Pincode:</label></td>
-                    <td><input type="number" id="pin" name="pin" required></td>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
-                </tr>
-            </table>
-        </form>
-        <div class="center">
-            <input type="submit" value="Submit" onclick="show()">
+
+    <!-- ===== Navbar ===== -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span>👨‍🍳 KhanaKhazana</span>
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#order-menu" class="nav-cta">🛒 Cart <span class="nav-cart-count" id="nav-cart-count" style="display:none;">0</span></a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <p id="cal" class="center"></p>
-    </div>
-    <footer>
-        <hr>
-        <div class="social-icons">
-            <a href="http://www.instagram.com/krishagrawal_30/"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="http://wa.me/918956369613"><img src="images/whats.png" alt="WhatsApp"></a>
-            <a href="http://twitter.com/KrishAg2006"><img src="images/twit.png" alt="Twitter"></a>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <main>
+        <!-- ===== Page Header ===== -->
+        <section class="order-page-header reveal-section" id="order-menu">
+            <div class="container">
+                <h1>Order Online</h1>
+                <p>Pick your favourites, add to cart, and we'll deliver to your doorstep.</p>
+            </div>
+        </section>
+
+        <!-- ===== Menu Grid ===== -->
+        <section class="page-section reveal-section" style="padding-top:1.5rem;">
+            <div class="container">
+                <div class="order-menu-grid" id="order-grid">
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/paneer.jpg" alt="Shahi Paneer" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Shahi Paneer</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹229</span>
+                                <button class="add-btn" onclick="addToCart('Shahi Paneer', 229)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/dosa.jpg" alt="Masala Dosa" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Masala Dosa with Sambhar &amp; Chutney</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹99</span>
+                                <button class="add-btn" onclick="addToCart('Masala Dosa', 99)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/biryani.jpg" alt="Shahi Biryani" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Shahi Biryani</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹129</span>
+                                <button class="add-btn" onclick="addToCart('Shahi Biryani', 129)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/fries.jpg" alt="French Fries" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>French Fries</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹69</span>
+                                <button class="add-btn" onclick="addToCart('French Fries', 69)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/naan.jpg" alt="Tandoori Naan" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Tandoori Naan (2 pc)</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹40</span>
+                                <button class="add-btn" onclick="addToCart('Tandoori Naan', 40)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/pasta.jpg" alt="White Sauce Pasta" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>White Sauce Pasta</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹159</span>
+                                <button class="add-btn" onclick="addToCart('White Sauce Pasta', 159)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/noodles.jpg" alt="Hakka Noodles" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Hakka Noodles</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹149</span>
+                                <button class="add-btn" onclick="addToCart('Hakka Noodles', 149)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/manchurian.jpg" alt="Veg Manchurian" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Veg Manchurian</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹139</span>
+                                <button class="add-btn" onclick="addToCart('Veg Manchurian', 139)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/shake.jpg" alt="Oreo Shake" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Oreo Shake (300 ml)</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹109</span>
+                                <button class="add-btn" onclick="addToCart('Oreo Shake', 109)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/Pizza.jpg" alt="Margherita Pizza" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Double Cheese Margherita Pizza</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹385</span>
+                                <button class="add-btn" onclick="addToCart('Margherita Pizza', 385)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/burger.jpg" alt="Burger" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Burger</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹145</span>
+                                <button class="add-btn" onclick="addToCart('Burger', 145)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/momos.jpg" alt="Steamed Momos" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Steamed Momos</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹89</span>
+                                <button class="add-btn" onclick="addToCart('Steamed Momos', 89)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/pav bhaji.jpg" alt="Pav Bhaji" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Pav Bhaji</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹125</span>
+                                <button class="add-btn" onclick="addToCart('Pav Bhaji', 125)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/lassi.jpg" alt="Lassi" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Lassi (250 ml)</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹70</span>
+                                <button class="add-btn" onclick="addToCart('Lassi', 70)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-card-img-wrap"><img src="images/sandwich.jpg" alt="Grilled Sandwich" class="order-card-img" loading="lazy"></div>
+                        <div class="order-card-body">
+                            <h4>Veg Cheesy Grill Sandwich</h4>
+                            <div class="order-card-row">
+                                <span class="order-card-price">₹135</span>
+                                <button class="add-btn" onclick="addToCart('Grill Sandwich', 135)">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Cart ===== -->
+        <section class="page-section reveal-section" id="cart-section" style="padding-top:0;">
+            <div class="container">
+                <div class="cart-panel" id="cart-panel">
+                    <h3>🛒 Your Cart <span class="cart-badge" id="cart-badge">0</span></h3>
+                    <ul class="cart-list" id="cart-list">
+                        <li class="cart-empty-msg">Your cart is empty. Add some delicious items!</li>
+                    </ul>
+                    <div class="cart-total-row" id="cart-total-row" style="display:none;">
+                        <span class="cart-total-label">Total</span>
+                        <span class="cart-total-amount" id="cart-total">₹0</span>
+                    </div>
+                    <div class="cart-actions" id="cart-actions" style="display:none;">
+                        <button class="cart-clear-btn" onclick="clearCart()">Clear Cart</button>
+                        <button class="cart-proceed-btn" onclick="document.getElementById('delivery-form').scrollIntoView({behavior:'smooth'})">Proceed to Checkout →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Delivery Form ===== -->
+        <section class="page-section reveal-section" id="delivery-form" style="padding-top:0;">
+            <div class="container">
+                <div class="delivery-form-wrap">
+                    <h2>Delivery Details</h2>
+                    <p class="form-subtitle">All fields are required to process your order.</p>
+                    <form id="order-form" onsubmit="return handleOrderSubmit(event);" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="fname" placeholder="e.g. Krish" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="lname" placeholder="e.g. Agrawal" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Gender</label>
+                                <div class="gender-options">
+                                    <label><input type="radio" id="gender_male" name="gender" value="Male" required> Male</label>
+                                    <label><input type="radio" id="gender_female" name="gender" value="Female"> Female</label>
+                                    <label><input type="radio" id="gender_other" name="gender" value="Other"> Other</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" maxlength="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">Pincode</label>
+                                <input type="text" id="pincode" name="pincode" placeholder="6-digit pincode" pattern="[0-9]{6}" maxlength="6" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment">Payment Mode</label>
+                                <select id="payment" name="payment" required>
+                                    <option value="" disabled selected>Select payment mode</option>
+                                    <option value="cod">Cash on Delivery</option>
+                                    <option value="upi">UPI</option>
+                                    <option value="card">Credit / Debit Card</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="address">Delivery Address</label>
+                                <textarea id="address" name="address" rows="3" placeholder="House no., Street, Locality, City" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Place Order ✓</button>
+                        <p class="form-message" id="form-message"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">👨‍🍳 KhanaKhazana</div>
+                <p class="footer-tagline">Preserving the rich culture of Indian cuisine since 2011.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Follow Us</h5>
+                <div class="footer-social">
+                    <a href="http://www.instagram.com/krishagrawal_30/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="http://wa.me/918956369613" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="images/whats.png" alt="WhatsApp"></a>
+                    <a href="http://twitter.com/KrishAg2006" aria-label="Twitter" target="_blank" rel="noopener"><img src="images/twit.png" alt="Twitter"></a>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2025 KhanaKhazana. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2025 KhanaKhazana. All rights reserved.</p>
     </footer>
-    <script>
-        let cart = [];
-        function addToCart(name, price) {
-            const idx = cart.findIndex(item => item.name === name);
-            if (idx > -1) {
-                cart[idx].qty += 1;
-            } else {
-                cart.push({name, price, qty: 1});
-            }
-            renderCart();
-        }
-        function removeFromCart(name) {
-            cart = cart.filter(item => item.name !== name);
-            renderCart();
-        }
-        function changeQty(name, delta) {
-            const idx = cart.findIndex(item => item.name === name);
-            if (idx > -1) {
-                cart[idx].qty += delta;
-                if (cart[idx].qty < 1) cart[idx].qty = 1;
-            }
-            renderCart();
-        }
-        function clearCart() {
-            cart = [];
-            renderCart();
-        }
-        function renderCart() {
-            const cartList = document.getElementById('cart-list');
-            cartList.innerHTML = '';
-            let total = 0;
-            cart.forEach(item => {
-                total += item.price * item.qty;
-                const li = document.createElement('li');
-                li.innerHTML = `${item.name} <button class='qty-btn' onclick="changeQty('${item.name}',-1)">-</button> x ${item.qty} <button class='qty-btn' onclick="changeQty('${item.name}',1)">+</button> <span>${item.price * item.qty}/-</span> <button class='remove-btn' onclick="removeFromCart('${item.name}')">Remove</button>`;
-                cartList.appendChild(li);
-            });
-            document.getElementById('cart-total').textContent = `Total: ${total}/-`;
-        }
-    </script>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal-overlay" id="order-modal">
+        <div class="modal-box">
+            <div class="modal-icon">🎉</div>
+            <h2>Order Placed!</h2>
+            <p id="modal-message">Your delicious food is on its way. Pay the bill in cash upon delivery.</p>
+            <button class="modal-close-btn" onclick="closeModal()">Got It!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
