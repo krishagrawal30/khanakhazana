@@ -3,90 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KhanaKhazana</title>
+    <title>KhanaKhazana — Authentic Indian Vegetarian Cuisine</title>
+    <meta name="description" content="KhanaKhazana serves unforgettable Indian vegetarian cuisine crafted with love. Explore our menu, order online, and enjoy rich flavours delivered to your door.">
+    <meta property="og:title" content="KhanaKhazana — Authentic Indian Vegetarian Cuisine">
+    <meta property="og:description" content="Experience the finest Indian vegetarian food. Fresh ingredients, bold flavours, fast delivery.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="head" class="center">
-        <div class="logo-fancy">👨‍🍳 KHANA KHAZANA </div>
-        <h3>The taste you deserve!</h3>
-        <nav class="navbar"> 
-            <a href="#home">Home</a>
-            <a href="#about">About us</a> 
-            <a href="#menu">Menu</a> 
-            <a href="#order">Order Now</a> 
-            <a href="#contact">Contact Us</a> 
-        </nav>
+
+    <!-- ===== Navbar ===== -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="brand">
+                <span>👨‍🍳 KhanaKhazana</span>
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="order.html" class="nav-cta">Order Now 🛒</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
     <main>
-        <div class="page-section" id="home">
-            <div style="display:flex;justify-content:center;align-items:center;">
-                <video class="video" autoplay muted loop style="max-width:350px;width:100%;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-                    <source src="culture.mp4" type="video/mp4">
-                </video>
+        <!-- ===== Hero ===== -->
+        <section class="hero" id="home">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="culture.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay">
+                <h1>Unforgettable Taste in Every Bite of <em>Indian Food</em></h1>
+                <p class="hero-tagline">Welcome to KhanaKhazana — preserving the rich culture of Indian cuisine and delivering a memorable dining experience since 2011.</p>
+                <a href="order.html" class="hero-cta">Explore Our Menu →</a>
             </div>
-            <div class="txt_over" style="text-align:center;margin-top:1.5rem;">
-                <h2 style="font-family:'Georgia',serif;font-size:2.2rem;color:#a0522d;letter-spacing:1px;">Unforgettable taste in every bite of Indian food.</h2>
-                <p class="text" style="font-size:1.2rem;color:#333;">Welcome to <span style="color:#a0522d;font-weight:bold;">KhanaKhazana</span>!<br>We strive to preserve the rich culture of Indian Food and deliver a memorable dining experience for food lovers.</p>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="chevron"></div>
             </div>
-        </div>
-        <section>
-        <div class="page-section" id="about">
-            <h1 style="font-family:'Georgia',serif;font-size:2rem;color:#a0522d;">About Us</h1>
-            <img src="images/table.avif" alt="Dining Table" style="float:right;max-width:300px;border-radius:16px;margin-left:2rem;box-shadow:0 2px 12px rgba(160,82,45,0.07);">
-            <p style="font-size:1.15rem;line-height:1.7;color:#444;">Welcome to <b>KhanaKhazana</b>, your destination for the wonderful world of Indian vegetarian food. Since 2011, we've been passionate about sharing the fantastic flavors of Indian cuisine with food lovers everywhere.<br><br>
-            Our menu is full of tasty and diverse vegetarian options. From hearty and flavorful dishes to delightful bites, every plate carries the essence of India's rich culinary landscape.<br><br>
-            Our team is made up of passionate chefs who love creating delicious food. Beyond serving great meals, we're also committed to choices that are good for our environment and community.<br><br>
-            Visit us and explore the delicious world of Indian vegetarian cuisine. We promise a dining experience filled with great food and good times.</p>
-        </div>
-        <section>
-        <div class="page-section" id="menu">
-            <h1 style="font-family:'Georgia',serif;font-size:2rem;color:#a0522d;">Menu</h1>
-            <div class="menu-gallery">
-                <img src="images/paneer.jpg" alt="Shahi Paneer" class="menu-img">
-                <img src="images/dosa.jpg" alt="Masala Dosa" class="menu-img">
-                <img src="images/biryani.jpg" alt="Shahi Biryani" class="menu-img">
-                <img src="images/fries.jpg" alt="French Fries" class="menu-img">
-                <img src="images/naan.jpg" alt="Tandoori Naan" class="menu-img">
-                <img src="images/pasta.jpg" alt="White sauce Pasta" class="menu-img">
-                <img src="images/noodles.jpg" alt="Hakka Noodles" class="menu-img">
-                <img src="images/manchurian.jpg" alt="Veg Manchurian" class="menu-img">
-                <img src="images/shake.jpg" alt="Oreo Shake" class="menu-img">
-                <img src="images/Pizza.jpg" alt="Double cheese Margherita Pizza" class="menu-img">
-                <img src="images/burger.jpg" alt="Burger" class="menu-img">
-                <img src="images/momos.jpg" alt="Steamed Momos" class="menu-img">
-                <img src="images/pav bhaji.jpg" alt="Pav Bhaji" class="menu-img">
-                <img src="images/lassi.jpg" alt="Lassi" class="menu-img">
-                <img src="images/sandwich.jpg" alt="Veg Cheesy Grill sandwich" class="menu-img">
+        </section>
+
+        <!-- ===== About ===== -->
+        <section class="page-section reveal-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="accent-line"></div>
+                    <h2>About Us</h2>
+                    <p>A passion for authentic Indian vegetarian cuisine, served since 2011.</p>
+                </div>
+                <div class="about-grid">
+                    <img src="images/table.avif" alt="Cozy dining setup at KhanaKhazana" class="about-img" loading="lazy">
+                    <div class="about-text">
+                        <h3>Where Flavour Meets Tradition</h3>
+                        <p>Welcome to <strong>KhanaKhazana</strong>, your destination for the wonderful world of Indian vegetarian food. Since 2011, we've been passionate about sharing the fantastic flavours of Indian cuisine with food lovers everywhere.</p>
+                        <p>Our menu is full of tasty and diverse vegetarian options. From hearty and flavourful dishes to delightful bites, every plate carries the essence of India's rich culinary landscape.</p>
+                        <p>Our team of passionate chefs craft each dish with love. Beyond serving great meals, we're committed to choices that are good for our environment and community.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">14+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">15+</span>
+                                <span class="stat-label">Dishes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">10K+</span>
+                                <span class="stat-label">Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p style="text-align:center;font-size:1.1rem;color:#555;margin-top:2rem;">Every dish is crafted with love and the finest ingredients for true food lovers.</p>
-        </div>
-        <section>
-        <div class="page-section" id="order">
-            <h1 style="font-family:'Georgia',serif;font-size:2rem;color:#a0522d;">Order Now</h1>
-            <div style="display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-                <img src="images/fastd-removebg-preview.png" alt="Fast Delivery" style="max-width:180px;margin:0 2rem 0 0;flex:0 0 180px;box-shadow:0 2px 8px rgba(160,82,45,0.07);">
-                <div style="flex:1;min-width:220px;">
-                    <p style="font-size:1.15rem;color:#444;">Explore our menu and order your favorites hassle-free. Enjoy fresh, flavorful dishes made to order just for you. Customize your meal, sit back, and get ready to savor every bite. We're here to make your dining experience deliciously easy.</p>
-                    <a href="order.html" class="ordernow-btn">Order Now</a>
+        </section>
+
+        <!-- ===== Menu ===== -->
+        <section class="page-section reveal-section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <div class="accent-line"></div>
+                    <h2>Our Menu</h2>
+                    <p>Every dish is crafted with love and the finest ingredients for true food lovers.</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/paneer.jpg" alt="Shahi Paneer" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Shahi Paneer</h4><span class="price">₹229</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/dosa.jpg" alt="Masala Dosa" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Masala Dosa</h4><span class="price">₹99</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/biryani.jpg" alt="Shahi Biryani" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Shahi Biryani</h4><span class="price">₹129</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/fries.jpg" alt="French Fries" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>French Fries</h4><span class="price">₹69</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/naan.jpg" alt="Tandoori Naan" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Tandoori Naan (2 pc)</h4><span class="price">₹40</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/pasta.jpg" alt="White Sauce Pasta" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>White Sauce Pasta</h4><span class="price">₹159</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/noodles.jpg" alt="Hakka Noodles" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Hakka Noodles</h4><span class="price">₹149</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/manchurian.jpg" alt="Veg Manchurian" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Veg Manchurian</h4><span class="price">₹139</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/shake.jpg" alt="Oreo Shake" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Oreo Shake (300 ml)</h4><span class="price">₹109</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/Pizza.jpg" alt="Margherita Pizza" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Margherita Pizza</h4><span class="price">₹385</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/burger.jpg" alt="Burger" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Burger</h4><span class="price">₹145</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/momos.jpg" alt="Steamed Momos" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Steamed Momos</h4><span class="price">₹89</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/pav bhaji.jpg" alt="Pav Bhaji" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Pav Bhaji</h4><span class="price">₹125</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/lassi.jpg" alt="Lassi" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Lassi (250 ml)</h4><span class="price">₹70</span></div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-img-wrap"><img src="images/sandwich.jpg" alt="Grilled Sandwich" class="menu-card-img" loading="lazy"></div>
+                        <div class="menu-card-body"><h4>Veg Cheesy Grill Sandwich</h4><span class="price">₹135</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Order CTA ===== -->
+        <section class="page-section reveal-section" id="order">
+            <div class="container">
+                <div class="cta-banner">
+                    <img src="images/fastd-removebg-preview.png" alt="Fast delivery illustration" loading="lazy">
+                    <div>
+                        <h2>Hungry? Order Now!</h2>
+                        <p>Explore our menu and order your favourites hassle-free. Fresh, flavourful dishes made to order — customize your meal, sit back, and savour every bite. We deliver to your doorstep!</p>
+                        <a href="order.html" class="hero-cta" style="display:inline-flex;">Start Your Order →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="page-section reveal-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <div class="accent-line"></div>
+                    <h2>Get In Touch</h2>
+                    <p>Have questions? We'd love to hear from you.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>📧 Prateek Kumar Ranjan</h4>
+                        <p>Manager</p>
+                        <p><a href="mailto:prateekranjan2004@gmail.com">prateekranjan2004@gmail.com</a></p>
+                        <p><a href="tel:+918448389390">+91 8448389390</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>📧 Krish Agrawal</h4>
+                        <p>Co-Manager</p>
+                        <p><a href="mailto:agrawalkrishn30@gmail.com">agrawalkrishn30@gmail.com</a></p>
+                        <p><a href="tel:+918956369613">+91 8956369613</a></p>
+                    </div>
+                </div>
+                <div class="social-row">
+                    <a href="http://www.instagram.com/krishagrawal_30/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="http://wa.me/918956369613" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+                        <img src="images/whats.png" alt="WhatsApp">
+                    </a>
+                    <a href="http://twitter.com/KrishAg2006" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                        <img src="images/twit.png" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">👨‍🍳 KhanaKhazana</div>
+                <p class="footer-tagline">Preserving the rich culture of Indian cuisine since 2011.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="order.html">Order Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Follow Us</h5>
+                <div class="footer-social">
+                    <a href="http://www.instagram.com/krishagrawal_30/" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="http://wa.me/918956369613" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="images/whats.png" alt="WhatsApp"></a>
+                    <a href="http://twitter.com/KrishAg2006" aria-label="Twitter" target="_blank" rel="noopener"><img src="images/twit.png" alt="Twitter"></a>
                 </div>
             </div>
         </div>
-        <section>
-        <div class="page-section" id="contact">
-            <h1 style="font-family:'Georgia',serif;font-size:2rem;color:#a0522d;">Contact Us</h1>
-            <p style="font-size:1.1rem;color:#444;">Prateek Kumar Ranjan (Manager): <a href="mailto:prateekranjan2004@gmail.com" style="color:#a0522d;text-decoration:none;">prateekranjan2004@gmail.com</a> | +91 8448389390</p>
-            <p style="font-size:1.1rem;color:#444;">Krish Agrawal (Co-manager): <a href="mailto:agrawalkrishn30@gmail.com" style="color:#a0522d;text-decoration:none;">agrawalkrishn30@gmail.com</a> | +91 8956369613</p>
-            <div class="social-icons" style="margin-top:1rem;">
-                <a href="http://www.instagram.com/krishagrawal_30/"><img src="images/instagram.png" alt="Instagram"></a>
-                <a href="http://wa.me/918956369613"><img src="images/whats.png" alt="WhatsApp"></a>
-                <a href="http://twitter.com/KrishAg2006"><img src="images/twit.png" alt="Twitter"></a>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <hr>
-        <p>&copy; 2025 KhanaKhazana. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2025 KhanaKhazana. All rights reserved.</p>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
