@@ -13,7 +13,7 @@ A warm, single-page ordering experience built for lovers of Indian vegetarian cu
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://khanakhazaana.netlify.app/)
 
-**[🌐 Visit the Live Site](https://khanakhazaana.netlify.app/)&nbsp;&nbsp;·&nbsp;&nbsp;[🛒 Order Now](https://khanakhazaana.netlify.app/order)&nbsp;&nbsp;·&nbsp;&nbsp;[📂 Repository](https://github.com/krishagrawal30/khanakhazana)**
+**[🌐 Click to see the live site](https://khanakhazaana.netlify.app/)&nbsp;&nbsp;**
 
 </div>
 
@@ -23,9 +23,7 @@ A warm, single-page ordering experience built for lovers of Indian vegetarian cu
 
 - [About](#about)
 - [Features](#features)
-- [Tech Stack](#tech-stack)
 - [Menu Preview](#menu-preview)
-- [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Roadmap](#roadmap)
@@ -37,35 +35,23 @@ A warm, single-page ordering experience built for lovers of Indian vegetarian cu
 
 ## About
 
-**KhanaKhazana** — literally, *"a treasury of food"* — is a front-end web project built around a simple idea: ordering a home-style Indian vegetarian meal online should feel as warm and unhurried as the meal itself.
+**KhanaKhazana** - literally, *"a treasury of food"*  is a front-end web project built around a simple idea: ordering a home-style Indian vegetarian meal online should feel as warm and unhurried as the meal itself.
 
-The site tells the story of a restaurant serving vegetarian Indian food since 2011, and carries that story through a single, flowing page: a welcoming hero with an ambient culture video, an About section, a hand-picked menu gallery, a fully working Order page, and a Contact section — all wrapped in a rustic sienna-and-gold visual identity.
+The site tells the story of a restaurant serving vegetarian Indian food since 2011, and carries that story through a single, flowing page: a welcoming hero with an ambient culture video, an About section, a hand-picked menu gallery, a fully working Order page, and a Contact section  all wrapped in a rustic sienna-and-gold visual identity.
 
-It's built entirely with **HTML, CSS, and JavaScript** — no frameworks, no backend, no build step — and deployed live on Netlify.
+It's built entirely with **HTML, CSS, and JavaScript** no frameworks, no backend, no build step and deployed live on Netlify.
 
 ## Features
 
-- 🧭 **Single-page navigation** — Home, About, Menu, Order, and Contact sections linked by smooth, JavaScript-powered anchor scrolling
-- 🎬 **Ambient hero video** — a looping culture video sets the mood the moment visitors land
-- 🖼️ **Curated menu gallery** — 15 vegetarian favorites, from Shahi Biryani to Oreo Shakes, each with its own photograph
-- 🛒 **A genuinely interactive cart** — add dishes, adjust quantities on the fly, watch the running total update, and clear the cart, all client-side with zero page reloads
-- ✅ **Validated checkout** — a delivery-details form checks for a valid 10-digit mobile number and a well-formed email before confirming the order
-- 💵 **Cash-on-delivery confirmation** — a clear confirmation message once an order is placed
-- 🎨 **A distinct visual identity** — a sienna-and-gold palette, soft card shadows, an animated gradient wordmark, and a Georgia/Poppins typographic pairing throughout
-- 📱 **Direct social integration** — one tap through to Instagram, WhatsApp, Twitter, or email
-- ⚡ **Zero dependencies** — pure HTML, CSS, and JavaScript, so it loads fast and deploys anywhere
-
-## Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Markup | HTML5 |
-| Styling | CSS3 — Flexbox, keyframe animations, gradient text, transitions |
-| Behavior | Vanilla JavaScript — DOM manipulation, form validation, cart state |
-| Typography | Google Fonts (Poppins) paired with Georgia / Segoe UI |
-| Hosting | [Netlify](https://www.netlify.com/) |
-
-No frameworks, no package manager, no build tooling — just the fundamentals, done carefully.
+- 🧭 **Single-page navigation** - Home, About, Menu, Order, and Contact sections linked by smooth, JavaScript-powered anchor scrolling
+- 🎬 **Ambient hero video** - a looping culture video sets the mood the moment visitors land
+- 🖼️ **Curated menu gallery** - 15 vegetarian favorites, from Shahi Biryani to Oreo Shakes, each with its own photograph
+- 🛒 **A genuinely interactive cart** - add dishes, adjust quantities on the fly, watch the running total update, and clear the cart, all client-side with zero page reloads
+- ✅ **Validated checkout** - a delivery-details form checks for a valid 10-digit mobile number and a well-formed email before confirming the order
+- 💵 **Cash-on-delivery confirmation** - a clear confirmation message once an order is placed
+- 🎨 **A distinct visual identity** - a sienna-and-gold palette, soft card shadows, an animated gradient wordmark, and a Georgia/Poppins typographic pairing throughout
+- 📱 **Direct social integration** - one tap through to Instagram, WhatsApp, Twitter, or email
+- ⚡ **Zero dependencies** - pure HTML, CSS, and JavaScript, so it loads fast and deploys anywhere
 
 ## Menu Preview
 
@@ -79,24 +65,9 @@ No frameworks, no package manager, no build tooling — just the fundamentals, d
 
 </div>
 
-## Live Demo
-
-<div align="center">
-<img src="images/ordern.jpg" alt="Order Banner" width="500">
-</div>
-
-KhanaKhazana is live and fully interactive — no sign-up required.
-
-| | |
-|---|---|
-| 🌐 **Live Site** | [khanakhazaana.netlify.app](https://khanakhazaana.netlify.app/) |
-| 🛒 **Order Now** | [khanakhazaana.netlify.app/order](https://khanakhazaana.netlify.app/order) |
-
-Head to the Order page, add a few dishes to your cart, and walk through the delivery-details form to see the full flow end to end.
-
 ## Getting Started
 
-The whole site is static, so there's nothing to build or install — just clone it and open it.
+The whole site is static, so there's nothing to build or install - just clone it and open it.
 
 **Prerequisites:** a modern web browser, and optionally [Git](https://git-scm.com/) plus any local static server.
 
@@ -156,7 +127,7 @@ A few natural directions this project could grow in:
 
 ## License
 
-No open-source license has been applied to this project yet — all rights are currently reserved by the KhanaKhazana team. If you'd like to reuse or build on any part of it, please reach out first.
+No open-source license has been applied to this project yet all rights are currently reserved by the KhanaKhazana team. If you'd like to reuse or build on any part of it, please reach out first.
 
 ---
 
